@@ -1,0 +1,28 @@
+{% extends 'smartprofile/base.html' %}
+{% block content%}
+<h3>Import Data</h3>
+<p>Import data to database</p>
+{% if messages %}
+        {% for message in messages %}
+            <div>
+<!--                | means OR operator-->
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{importdataform}}
+    <!-- <p>Please select Dataset.</p>
+    <select name="dataset1" class="form-control my-3">
+      <option value="Household">Household</option>
+      <option value="Personal">Personal</option>
+
+      </select>
+
+      <p>Please select file.</p>
+      <input type="file" name="importData"> -->
+    <button class="btn btn-primary" type="submit">Import</button>
+  </form>
+{{Massage}}
+  {% endblock %}

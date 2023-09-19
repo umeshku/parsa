@@ -1,0 +1,1 @@
+web: gunicorn hamroprofile.wsgi --log-file -
